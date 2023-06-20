@@ -15,6 +15,7 @@ return new class extends Migration
         {
             $table->id();
             
+            $table->string('naziv');
             $table->date('datum_pocetka');
             $table->date('datum_zavrsetka');
             $table->double('budzet');

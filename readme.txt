@@ -17,3 +17,11 @@ php artisan migrate
 
 // Svaki sledeci put pokrecemo refresh i seed da automatizujemo sve
 php artisan migrate:refresh --seed
+
+php artisan make:controller HomepageController
+php artisan make:controller DizajnerController
+php artisan make:controller FrilenserController
+php artisan make:controller KlijentController
+php artisan make:controller PosaoController
+
+php artisan serve

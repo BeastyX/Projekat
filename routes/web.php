@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\DizajnerController;
+use App\Http\Controllers\FrilenserController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\KlijentController;
+use App\Http\Controllers\PosaoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomepageController::class, 'index'])->name('home');
+
+Route::get('/dizajneri', [DizajnerController::class, 'index'])->name('dizajneri.index');
+
+Route::get('/frilenseri', [FrilenserController::class, 'index'])->name('frilenseri.index');
+
+Route::get('/klijenti', [KlijentController::class, 'index'])->name('klijenti.index');
+
+Route::get('/poslovi', [PosaoController::class, 'index'])->name('poslovi.index');
