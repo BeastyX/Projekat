@@ -45,6 +45,22 @@ class PosaoController extends Controller
         return redirect(route('poslovi.index'));
     }
 
+    public function edit(Posao $posao)
+    {
+        return view('poslovi.edit', ['posao' => $posao]);
+    }
+
+    public function update(Request $request, Posao $posao)
+    {
+        $posao->datum_zavrsetka = $request->input('datum_zavrsetka');
+        $posao->budzet = $request->input('budzet');
+        $posao->opis_ideje = $request->input('opis_ideje');
+        $posao->status = $request->input('status');
+
+        $posao->save();
+        return redirect(route('poslovi.index'));
+    }
+
     public function destroy(Posao $posao)
     {
         $posao->delete();

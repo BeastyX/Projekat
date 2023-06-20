@@ -28,7 +28,7 @@
                     <td>{{$posao->naziv}}</td>
                     <td>{{$posao->datum_pocetka}}</td>
                     <td>{{$posao->datum_zavrsetka}}</td>
-                    <td>{{$posao->budzet}}</td>
+                    <td>{{$posao->budzet}} RSD</td>
                     <td>
                         @switch($posao->status)
                             @case(0)
@@ -44,7 +44,7 @@
                         @endswitch
                     </td>
                     <td>
-                        <a href="{{route('poslovi.index')}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a>
+                        <a href="{{route('poslovi.edit', ['posao' => $posao])}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a>
                     </td>
                     <td>
                         <a href="{{route('poslovi.destroy', ['posao' => $posao])}}"><button type="button" class="btn btn-danger btn-sm">Obriši posao</button></a>
