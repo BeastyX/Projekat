@@ -20,17 +20,17 @@
     <br>
 
     <p>
-        <b>Poslovi</b> - Lista svih sklopljenih poslova sa opcijama za kreiranje novog posla kao i modifikaciju postojećih
+        <a href="{{route('poslovi.index')}}"><b>Poslovi</b></a> - Lista svih sklopljenih poslova sa opcijama za kreiranje novog posla kao i modifikaciju postojećih
     </p>
     <p>
-        <b>Frilenseri</b> - Lista svih frilensera sa opcijama za dodadavanje novih kao i modifikaciju postojećih
+        <a href="{{route('frilenseri.index')}}"><b>Frilenseri</b></a> - Lista svih frilensera sa opcijama za dodadavanje novih kao i modifikaciju postojećih
     </p>
     <p>
-        <b>Klijenti</b> - Lista svih klijenata sa opcijama za dodadavanje novih kao i modifikaciju postojećih
+        <a href="{{route('klijenti.index')}}"><b>Klijenti</b></a> - Lista svih klijenata sa opcijama za dodadavanje novih kao i modifikaciju postojećih
     </p>
 
     <p>
-        <b>Dizajneri</b> - Lista svih dizajnera sa opcijama za dodadavanje novih kao i modifikaciju postojećih
+        <a href="{{route('dizajneri.index')}}"><b>Dizajneri</b></a> - Lista svih dizajnera sa opcijama za dodadavanje novih kao i modifikaciju postojećih
     </p>
         
 @endsection
