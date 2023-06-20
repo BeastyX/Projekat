@@ -29,10 +29,25 @@
                     <td>{{$posao->datum_pocetka}}</td>
                     <td>{{$posao->datum_zavrsetka}}</td>
                     <td>{{$posao->budzet}}</td>
-                    <td>{{$posao->status}}</td>
-                    <td><a href="{{route('poslovi.index')}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a></td>
                     <td>
-                        delete
+                        @switch($posao->status)
+                            @case(0)
+                                <span class="label label-warning">Započet</span>
+                                @break
+
+                            @case(1)
+                                <span class="label label-success">Završen</span>
+                                @break
+
+                            @default
+                                
+                        @endswitch
+                    </td>
+                    <td>
+                        <a href="{{route('poslovi.index')}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a>
+                    </td>
+                    <td>
+                        <a href="{{route('poslovi.destroy', ['posao' => $posao])}}"><button type="button" class="btn btn-danger btn-sm">Obriši posao</button></a>
                     </td>
                 </tr>
             @endforeach

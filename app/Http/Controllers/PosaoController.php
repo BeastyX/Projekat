@@ -44,4 +44,11 @@ class PosaoController extends Controller
         $posao->save();
         return redirect(route('poslovi.index'));
     }
+
+    public function destroy(Posao $posao)
+    {
+        $posao->delete();
+
+        return redirect(route('poslovi.index'));
+    }
 }

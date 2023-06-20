@@ -29,3 +29,4 @@ Route::get('/klijenti', [KlijentController::class, 'index'])->name('klijenti.ind
 Route::get('/poslovi', [PosaoController::class, 'index'])->name('poslovi.index');
 Route::get('/poslovi/create', [PosaoController::class, 'create'])->name('poslovi.create');
 Route::post('/poslovi/store', [PosaoController::class, 'store'])->name('poslovi.store');
+Route::get('/poslovi/destroy/{posao}', [PosaoController::class, 'destroy'])->name('poslovi.destroy');
