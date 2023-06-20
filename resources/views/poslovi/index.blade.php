@@ -21,10 +21,11 @@
                 <th>Obriši</th>
             </tr>
         </thead>
+
         <tbody>
             @foreach ($poslovi as $posao)
                 <tr>
-                    <td>{{$loop->index + 1}}</td>
+                    <td>{{$loop->index + 1 + ($poslovi->currentPage() - 1) * $poslovi->perPage()}}</td>
                     <td>{{$posao->naziv}}</td>
                     <td>{{$posao->datum_pocetka}}</td>
                     <td>{{$posao->datum_zavrsetka}}</td>
@@ -53,5 +54,11 @@
             @endforeach
         </tbody>
     </table>
+
+    <div>
+        <center>
+            {{$poslovi->links()}}
+        </center>
+    </div>
 
 @endsection
