@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('ime');
-            $table->string('prezime')->nullable();
+            $table->string('prezime')->nullable(); // Ako je NULL znaci da je kompanija
             $table->string('adresa');
             $table->string('grad');
             $table->string('drzava');
