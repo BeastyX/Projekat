@@ -5,7 +5,11 @@
     <h1 class="text-primary text-center">Svi klijenti</h1><br>
 
     <div class="text-right" style="margin-bottom: 2em;">
+        @auth
         <a href="{{route('klijenti.create')}}"><button type="button" class="btn btn-primary btn-lg">+ Novi Klijent</button></a>
+        @else   
+        <button type="button" class="btn btn-primary btn-lg disabled">+ Novi Klijent</button>
+        @endauth
     </div>
 
     <table class="table">
@@ -42,13 +46,20 @@
                         @endif
                     </td>
                     <td>
+                        @auth
                         <a href="{{route('klijenti.edit', ['klijent' => $klijent])}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a>
+                        @else
+                        <button type="button" class="btn btn-primary btn-sm disabled">Detaljnije</button>
+                    @endauth
                     </td>
                     <td>
-                        {{-- <a href="{{route('poslovi.destroy', ['posao' => $posao])}}"><button type="button" class="btn btn-danger btn-sm">Obriši posao</button></a> --}}
                         <form action="{{route('klijenti.destroy', ['klijent' => $klijent])}}" method="post">
                             @csrf
-                            <button class="btn btn-danger btn-sm">Obriši klijenta</button>
+                            @auth
+                                <button class="btn btn-danger btn-sm">Obriši klijenta</button>
+                            @else
+                                <button type="button" class="btn btn-danger btn-sm disabled">Obriši klijenta</button>
+                            @endauth
                         </form>
                     </td>
                 </tr>

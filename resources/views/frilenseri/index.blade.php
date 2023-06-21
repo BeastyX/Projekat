@@ -5,7 +5,11 @@
     <h1 class="text-primary text-center">Svi frilenseri</h1><br>
 
     <div class="text-right" style="margin-bottom: 2em;">
+        @auth
         <a href="{{route('frilenseri.create')}}"><button type="button" class="btn btn-primary btn-lg">+ Novi Frilenser</button></a>
+        @else   
+        <button type="button" class="btn btn-primary btn-lg disabled">+ Novi Frilenser</button>
+        @endauth
     </div>
 
     <table class="table">
@@ -42,13 +46,20 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{route('frilenseri.edit', ['frilenser' => $frilenser])}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a>
+                        @auth
+                            <a href="{{route('frilenseri.edit', ['frilenser' => $frilenser])}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a>
+                            @else
+                            <button type="button" class="btn btn-primary btn-sm disabled">Detaljnije</button>
+                        @endauth
                     </td>
                     <td>
-                        {{-- <a href="{{route('poslovi.destroy', ['posao' => $posao])}}"><button type="button" class="btn btn-danger btn-sm">Obriši posao</button></a> --}}
                         <form action="{{route('frilenseri.destroy', ['frilenser' => $frilenser])}}" method="post">
                             @csrf
-                            <button class="btn btn-danger btn-sm">Obriši frilensera</button>
+                            @auth
+                                <button class="btn btn-danger btn-sm">Obriši frilensera</button>
+                                @else
+                                <button type="button" class="btn btn-danger btn-sm disabled">Obriši frilensera</button>
+                            @endauth
                         </form>
                     </td>
                 </tr>

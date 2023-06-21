@@ -34,3 +34,7 @@ php artisan make:controller UserController
 // Da bi radila paginacija u bootstrapu potrebno je dodati
 // Paginator::useBootstrap();
 // u App/Providers/AppServicesProvider.php
+
+// Da bi radio ->middleware('guest') i ->middleware('auth') potrebno je izmeniti
+// return $request->expectsJson() ? null : route('users.login');
+// u App/Http/Middleware/Authenticate.php

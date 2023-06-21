@@ -5,7 +5,11 @@
     <h1 class="text-primary text-center">Svi poslovi</h1><br>
 
     <div class="text-right" style="margin-bottom: 2em;">
+        @auth
         <a href="{{route('poslovi.create')}}"><button type="button" class="btn btn-primary btn-lg">+ Novi Posao</button></a>
+        @else   
+        <button type="button" class="btn btn-primary btn-lg disabled">+ Novi Posao</button>
+        @endauth
     </div>
 
     <table class="table">
@@ -45,13 +49,20 @@
                         @endswitch
                     </td>
                     <td>
-                        <a href="{{route('poslovi.edit', ['posao' => $posao])}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a>
+                        @auth
+                            <a href="{{route('poslovi.edit', ['posao' => $posao])}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a>
+                            @else
+                            <button type="button" class="btn btn-primary btn-sm disabled">Detaljnije</button>
+                        @endauth
                     </td>
                     <td>
-                        {{-- <a href="{{route('poslovi.destroy', ['posao' => $posao])}}"><button type="button" class="btn btn-danger btn-sm">Obriši posao</button></a> --}}
                         <form action="{{route('poslovi.destroy', ['posao' => $posao])}}" method="post">
                             @csrf
-                            <button class="btn btn-danger btn-sm">Obriši posao</button>
+                            @auth
+                                <button class="btn btn-danger btn-sm">Obriši posao</button>
+                            @else
+                                <button type="button" class="btn btn-danger btn-sm disabled">Obriši posao</button>
+                            @endauth
                         </form>
                     </td>
                 </tr>

@@ -21,31 +21,31 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
 
-Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
-Route::get('/users/login', [UserController::class, 'login'])->name('users.login');
-Route::post('/users/autentifikacija', [UserController::class, 'autentifikacija'])->name('users.autentifikacija');
-Route::post('/users/logout', [UserController::class, 'logout'])->name('users.logout');
+Route::get('/users/create', [UserController::class, 'create'])->middleware('guest')->name('users.create');
+Route::post('/users/store', [UserController::class, 'store'])->middleware('guest')->name('users.store');
+Route::get('/users/login', [UserController::class, 'login'])->middleware('guest')->name('users.login');
+Route::post('/users/autentifikacija', [UserController::class, 'autentifikacija'])->middleware('guest')->name('users.autentifikacija');
+Route::post('/users/logout', [UserController::class, 'logout'])->middleware('auth')->name('users.logout');
 
 Route::get('/dizajneri', [DizajnerController::class, 'index'])->name('dizajneri.index');
 
 Route::get('/frilenseri', [FrilenserController::class, 'index'])->name('frilenseri.index');
-Route::get('/frilenseri/create', [FrilenserController::class, 'create'])->name('frilenseri.create');
-Route::post('/frilenseri/store', [FrilenserController::class, 'store'])->name('frilenseri.store');
-Route::get('/frilenseri/edit/{frilenser}', [FrilenserController::class, 'edit'])->name('frilenseri.edit');
-Route::post('/frilenseri/update/{frilenser}', [FrilenserController::class, 'update'])->name('frilenseri.update');
-Route::post('/frilenseri/destroy/{frilenser}', [FrilenserController::class, 'destroy'])->name('frilenseri.destroy');
+Route::get('/frilenseri/create', [FrilenserController::class, 'create'])->middleware('auth')->name('frilenseri.create');
+Route::post('/frilenseri/store', [FrilenserController::class, 'store'])->middleware('auth')->name('frilenseri.store');
+Route::get('/frilenseri/edit/{frilenser}', [FrilenserController::class, 'edit'])->middleware('auth')->name('frilenseri.edit');
+Route::post('/frilenseri/update/{frilenser}', [FrilenserController::class, 'update'])->middleware('auth')->name('frilenseri.update');
+Route::post('/frilenseri/destroy/{frilenser}', [FrilenserController::class, 'destroy'])->middleware('auth')->name('frilenseri.destroy');
 
 Route::get('/klijenti', [KlijentController::class, 'index'])->name('klijenti.index');
-Route::get('/klijenti/create', [KlijentController::class, 'create'])->name('klijenti.create');
-Route::post('/klijenti/store', [KlijentController::class, 'store'])->name('klijenti.store');
-Route::get('/klijenti/edit/{klijent}', [KlijentController::class, 'edit'])->name('klijenti.edit');
-Route::post('/klijenti/update/{klijent}', [KlijentController::class, 'update'])->name('klijenti.update');
-Route::post('/klijenti/destroy/{klijent}', [KlijentController::class, 'destroy'])->name('klijenti.destroy');
+Route::get('/klijenti/create', [KlijentController::class, 'create'])->middleware('auth')->name('klijenti.create');
+Route::post('/klijenti/store', [KlijentController::class, 'store'])->middleware('auth')->name('klijenti.store');
+Route::get('/klijenti/edit/{klijent}', [KlijentController::class, 'edit'])->middleware('auth')->name('klijenti.edit');
+Route::post('/klijenti/update/{klijent}', [KlijentController::class, 'update'])->middleware('auth')->name('klijenti.update');
+Route::post('/klijenti/destroy/{klijent}', [KlijentController::class, 'destroy'])->middleware('auth')->name('klijenti.destroy');
 
 Route::get('/poslovi', [PosaoController::class, 'index'])->name('poslovi.index');
-Route::get('/poslovi/create', [PosaoController::class, 'create'])->name('poslovi.create');
-Route::post('/poslovi/store', [PosaoController::class, 'store'])->name('poslovi.store');
-Route::get('/poslovi/edit/{posao}', [PosaoController::class, 'edit'])->name('poslovi.edit');
-Route::post('/poslovi/update/{posao}', [PosaoController::class, 'update'])->name('poslovi.update');
-Route::post('/poslovi/destroy/{posao}', [PosaoController::class, 'destroy'])->name('poslovi.destroy');
+Route::get('/poslovi/create', [PosaoController::class, 'create'])->middleware('auth')->name('poslovi.create');
+Route::post('/poslovi/store', [PosaoController::class, 'store'])->middleware('auth')->name('poslovi.store');
+Route::get('/poslovi/edit/{posao}', [PosaoController::class, 'edit'])->middleware('auth')->name('poslovi.edit');
+Route::post('/poslovi/update/{posao}', [PosaoController::class, 'update'])->middleware('auth')->name('poslovi.update');
+Route::post('/poslovi/destroy/{posao}', [PosaoController::class, 'destroy'])->middleware('auth')->name('poslovi.destroy');
