@@ -25,3 +25,12 @@ php artisan make:controller KlijentController
 php artisan make:controller PosaoController
 
 php artisan serve
+
+
+
+
+
+
+// Da bi radila paginacija u bootstrapu potrebno je dodati
+// Paginator::useBootstrap();
+// u App/Providers/AppServicesProvider.php

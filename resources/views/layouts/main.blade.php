@@ -24,10 +24,10 @@
 
         <ul  class="nav navbar-nav navbar-right">
             <li>
-                <li><a href="{{route('poslovi.index')}}">Log in</a></li>
+                <li><a href="{{route('poslovi.index')}}"><span class="glyphicon glyphicon-log-in"></span> Uloguj se</a></li>
             </li>
             <li>
-                <li><a href="{{route('poslovi.index')}}">Register</a></li>
+                <li><a href="{{route('poslovi.index')}}"><span class=" glyphicon glyphicon-user"></span> Registruj se</a></li>
             </li>
         </ul>
     </div>
