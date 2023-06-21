@@ -11,21 +11,21 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="ime">Ime</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="ime" placeholder="Vase ime ili ime kompanije" required>
+                <input type="text" class="form-control" name="ime" placeholder="Vaše ime ili ime kompanije" required>
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-sm-2" for="prezime">Prezime</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="prezime" placeholder="Vase prezime (OPCIONO)">
+                <input type="text" class="form-control" name="prezime" placeholder="Vaše prezime (OPCIONO)">
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-sm-2" for="adresa">Adresa</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="adresa" placeholder="Vasa adresa ili adresa kompanije" required>
+                <input type="text" class="form-control" name="adresa" placeholder="Vaša adresa ili adresa kompanije" required>
             </div>
         </div>
 
@@ -37,7 +37,7 @@
         </div>
         
         <div class="form-group">
-            <label class="control-label col-sm-2" for="drzava">Drzava</label>
+            <label class="control-label col-sm-2" for="drzava">Država</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" name="drzava" placeholder="" required>
             </div>

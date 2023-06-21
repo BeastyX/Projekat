@@ -14,7 +14,7 @@
                 <th>#</th>
                 <th>Ime</th>
                 <th>Prezime</th>
-                <th>Drzava</th>
+                <th>Država</th>
                 <th>Rating</th>
                 <th>Detaljno</th>
                 <th>Obriši</th>
@@ -28,7 +28,7 @@
                     <td>{{$klijent->ime}}</td>
                     <td>
                         @if ($klijent->prezime == NULL)
-                            /
+                            <p style="color:rgb(182, 182, 182)">Kompanija</p>
                         @else
                             {{$klijent->prezime}}
                         @endif
