@@ -23,12 +23,26 @@
         </ul>
 
         <ul  class="nav navbar-nav navbar-right">
-            <li>
-                <li><a href="{{route('poslovi.index')}}"><span class="glyphicon glyphicon-log-in"></span> Uloguj se</a></li>
-            </li>
-            <li>
-                <li><a href="{{route('poslovi.index')}}"><span class=" glyphicon glyphicon-user"></span> Registruj se</a></li>
-            </li>
+            @auth
+                <li>
+                    <li><a href="#">Zdravo, <b>{{auth()->user()->name}}</b> </a></li>
+                </li>
+                <li>
+                    <form class="navbar-form" method="POST" action="{{route('users.logout')}}">
+                        @csrf
+                        <button type="submit" class="btn btn-link">
+                            <span class="glyphicon glyphicon-log-out"></span> Izloguj se
+                        </button>
+                    </form>
+                </li>
+            @else
+                <li>
+                    <li><a href="{{route('users.login')}}"><span class="glyphicon glyphicon-log-in"></span> Uloguj se</a></li>
+                </li>
+                <li>
+                    <li><a href="{{route('users.create')}}"><span class=" glyphicon glyphicon-user"></span> Registruj se</a></li>
+                </li>
+            @endauth
         </ul>
     </div>
 </nav>

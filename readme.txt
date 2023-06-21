@@ -26,7 +26,7 @@ php artisan make:controller PosaoController
 
 php artisan serve
 
-
+php artisan make:controller UserController
 
 
 

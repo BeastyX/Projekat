@@ -5,6 +5,7 @@ use App\Http\Controllers\FrilenserController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\KlijentController;
 use App\Http\Controllers\PosaoController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
+
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+Route::get('/users/login', [UserController::class, 'login'])->name('users.login');
+Route::post('/users/autentifikacija', [UserController::class, 'autentifikacija'])->name('users.autentifikacija');
+Route::post('/users/logout', [UserController::class, 'logout'])->name('users.logout');
 
 Route::get('/dizajneri', [DizajnerController::class, 'index'])->name('dizajneri.index');
 
