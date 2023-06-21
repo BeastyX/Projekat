@@ -16,11 +16,19 @@
         <a class="navbar-brand" href="{{route('home')}}">Home</a>
         </div>
         <ul class="nav navbar-nav">
-        {{-- <li class="active"><a href="{{route('poslovi.index')}}">Upwork Poslovi</a></li> --}}
-        <li><a href="{{route('poslovi.index')}}">Poslovi</a></li>
-        <li><a href="{{route('frilenseri.index')}}">Frilenseri</a></li>
-        <li><a href="{{route('klijenti.index')}}">Klijenti</a></li>
-        <li><a href="{{route('dizajneri.index')}}">Dizajneri</a></li>
+            <li><a href="{{route('poslovi.index')}}">Poslovi</a></li>
+            <li><a href="{{route('frilenseri.index')}}">Frilenseri</a></li>
+            <li><a href="{{route('klijenti.index')}}">Klijenti</a></li>
+            <li><a href="{{route('dizajneri.index')}}">Dizajneri</a></li>
+        </ul>
+        
+        <ul  class="nav navbar-nav navbar-right">
+            <li>
+                <li><a href="{{route('poslovi.index')}}">Log in</a></li>
+            </li>
+            <li>
+                <li><a href="{{route('poslovi.index')}}">Register</a></li>
+            </li>
         </ul>
     </div>
 </nav>
