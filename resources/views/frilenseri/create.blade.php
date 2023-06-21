@@ -4,7 +4,7 @@
 
     <h1 class="text-primary text-center">Novi Frilenser</h1><br>
 
-    <form method='post' action="{{route('klijenti.store')}}" class="form-horizontal" >
+    <form method='post' action="{{route('frilenseri.store')}}" class="form-horizontal" >
 
         @csrf
 
