@@ -19,10 +19,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
+Route::get('/greska', [FrilenserController::class, 'destroy'])->name('greska');
 
 Route::get('/dizajneri', [DizajnerController::class, 'index'])->name('dizajneri.index');
 
 Route::get('/frilenseri', [FrilenserController::class, 'index'])->name('frilenseri.index');
+Route::get('/frilenseri/create', [FrilenserController::class, 'create'])->name('frilenseri.create');
+Route::post('/frilenseri/store', [FrilenserController::class, 'store'])->name('frilenseri.store');
+Route::get('/frilenseri/edit/{frilenser}', [FrilenserController::class, 'edit'])->name('frilenseri.edit');
+Route::post('/frilenseri/update/{frilenser}', [FrilenserController::class, 'update'])->name('frilenseri.update');
+Route::post('/frilenseri/destroy/{frilenser}', [FrilenserController::class, 'destroy'])->name('frilenseri.destroy');
 
 Route::get('/klijenti', [KlijentController::class, 'index'])->name('klijenti.index');
 

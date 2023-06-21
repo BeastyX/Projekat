@@ -65,6 +65,6 @@ class PosaoController extends Controller
     {
         $posao->delete();
 
-        return redirect(route('poslovi.index'));
+        return redirect(route('home'));
     }
 }
