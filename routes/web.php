@@ -31,4 +31,5 @@ Route::get('/poslovi/create', [PosaoController::class, 'create'])->name('poslovi
 Route::post('/poslovi/store', [PosaoController::class, 'store'])->name('poslovi.store');
 Route::get('/poslovi/edit/{posao}', [PosaoController::class, 'edit'])->name('poslovi.edit');
 Route::post('/poslovi/update/{posao}', [PosaoController::class, 'update'])->name('poslovi.update');
-Route::get('/poslovi/destroy/{posao}', [PosaoController::class, 'destroy'])->name('poslovi.destroy');
+// Route::get('/poslovi/destroy/{posao}', [PosaoController::class, 'destroy'])->name('poslovi.destroy');
+Route::post('/poslovi/destroy/{posao}', [PosaoController::class, 'destroy'])->name('poslovi.destroy');

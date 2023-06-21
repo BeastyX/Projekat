@@ -48,7 +48,11 @@
                         <a href="{{route('poslovi.edit', ['posao' => $posao])}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a>
                     </td>
                     <td>
-                        <a href="{{route('poslovi.destroy', ['posao' => $posao])}}"><button type="button" class="btn btn-danger btn-sm">Obriši posao</button></a>
+                        {{-- <a href="{{route('poslovi.destroy', ['posao' => $posao])}}"><button type="button" class="btn btn-danger btn-sm">Obriši posao</button></a> --}}
+                        <form action="{{route('poslovi.destroy', ['posao' => $posao])}}" method="post">
+                            @csrf
+                            <button class="btn btn-danger btn-sm">Obriši posao</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
