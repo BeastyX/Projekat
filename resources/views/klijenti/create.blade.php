@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="text-primary text-center">Novi Frilenser</h1><br>
+    <h1 class="text-primary text-center">Novi Klijent</h1><br>
 
     <form method='post' action="{{route('klijenti.store')}}" class="form-horizontal" >
 
