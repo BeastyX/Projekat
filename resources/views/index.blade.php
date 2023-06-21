@@ -13,12 +13,10 @@
     <br>
     <br>
 
-    <h4>
+    <h4 >
         Navigacioni bar:
     </h4>
-
-    <br>
-
+    
     <p>
         <a href="{{route('poslovi.index')}}"><b>Poslovi</b></a> - Lista svih sklopljenih poslova sa opcijama za kreiranje novog posla kao i modifikaciju postojećih
     </p>
@@ -28,9 +26,22 @@
     <p>
         <a href="{{route('klijenti.index')}}"><b>Klijenti</b></a> - Lista svih klijenata sa opcijama za dodadavanje novih kao i modifikaciju postojećih
     </p>
-
     <p>
         <a href="{{route('dizajneri.index')}}"><b>Dizajneri</b></a> - Lista svih dizajnera sa opcijama za dodadavanje novih kao i modifikaciju postojećih
     </p>
+    
+    <br>
+    
+    <h4>
+        Autentifikacija:
+    </h4>
+
+    <p>
+        <b class="text-primary">Guest</b> - Korisnici koji nisu logovani mogu samo da vrše pregled svih lista
+    </p>
+    <p>
+        <b class="text-primary">User</b> - Korisnici koji su logovani mogu da vrše pregled svih lista kao i dodavanje/izmenu/brisanje svih podataka
+    </p>
+
         
 @endsection

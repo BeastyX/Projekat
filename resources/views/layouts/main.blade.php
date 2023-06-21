@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Upwork simulacija</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
             <li><a href="{{route('klijenti.index')}}">Klijenti</a></li>
             <li><a href="{{route('dizajneri.index')}}">Dizajneri</a></li>
         </ul>
-        
+
         <ul  class="nav navbar-nav navbar-right">
             <li>
                 <li><a href="{{route('poslovi.index')}}">Log in</a></li>
