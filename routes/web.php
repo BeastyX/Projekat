@@ -28,6 +28,11 @@ Route::post('/users/autentifikacija', [UserController::class, 'autentifikacija']
 Route::post('/users/logout', [UserController::class, 'logout'])->middleware('auth')->name('users.logout');
 
 Route::get('/dizajneri', [DizajnerController::class, 'index'])->name('dizajneri.index');
+Route::get('/dizajneri/create', [DizajnerController::class, 'create'])->middleware('auth')->name('dizajneri.create');
+Route::post('/dizajneri/store', [DizajnerController::class, 'store'])->middleware('auth')->name('dizajneri.store');
+Route::get('/dizajneri/edit/{dizajner}', [DizajnerController::class, 'edit'])->middleware('auth')->name('dizajneri.edit');
+Route::post('/dizajneri/update/{dizajner}', [DizajnerController::class, 'update'])->middleware('auth')->name('dizajneri.update');
+Route::post('/dizajneri/destroy/{dizajner}', [DizajnerController::class, 'destroy'])->middleware('auth')->name('dizajneri.destroy');
 
 Route::get('/frilenseri', [FrilenserController::class, 'index'])->name('frilenseri.index');
 Route::get('/frilenseri/create', [FrilenserController::class, 'create'])->middleware('auth')->name('frilenseri.create');

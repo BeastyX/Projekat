@@ -22,7 +22,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="drzava">Drzava</label>
+            <label class="control-label col-sm-2" for="drzava">Država</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" name="drzava" value="{{$frilenser->drzava}}" required>
             </div>

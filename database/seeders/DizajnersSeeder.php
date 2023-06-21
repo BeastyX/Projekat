@@ -21,7 +21,7 @@ class DizajnersSeeder extends Seeder
                 'adresa' => 'Kosovska 46',
                 'grad' => 'Krusevac',
                 'drzava' => 'Srbija',
-                'opis_delatnosti' => 'Graficki dizajner'
+                'opis_delatnosti' => 'Grafički dizajner'
             ]);
 
         Dizajner::create(
@@ -40,7 +40,7 @@ class DizajnersSeeder extends Seeder
                 'adresa' => 'Boulevard 25',
                 'grad' => 'New York',
                 'drzava' => 'USA',
-                'opis_delatnosti' => 'Graficki dizajner'
+                'opis_delatnosti' => 'Grafički dizajner'
             ]);
 
     }
