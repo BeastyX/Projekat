@@ -56,6 +56,10 @@
         </tbody>
     </table>
 
+    @error('delete')
+        <h5 style="color: rgb(255, 0, 0);">{!! $message !!}</h5>
+    @enderror
+
     <div>
         <center>
             {{$klijenti->links()}}

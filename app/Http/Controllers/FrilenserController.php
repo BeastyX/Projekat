@@ -51,15 +51,21 @@ class FrilenserController extends Controller
 
     public function destroy(Frilenser $frilenser)
     {
-        try
+        if($frilenser->poslovi != NULL && count($frilenser->poslovi) > 0)
+        {
+            $poruka = "Greška! Frilenser je vezan za sledeće poslove:<br>";
+            foreach ($frilenser->poslovi as $posao) 
+            {
+                $poruka .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- $posao->naziv <br>";
+            }
+            
+            $poruka .= "Prvo morate obrisati sve poslove za koje je vezan Frilenser a tek onda obrisati Frilensera!";
+            return back()->withErrors(['delete' => $poruka]);
+        }
+        else
         {
             $frilenser->delete();
-
             return redirect(route('frilenseri.index'));
-        }
-        catch(Exception $e)
-        {
-            return view('greska', ['greska' => $e]);
         }
 
     }

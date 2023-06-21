@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
-Route::get('/greska', [FrilenserController::class, 'destroy'])->name('greska');
 
 Route::get('/dizajneri', [DizajnerController::class, 'index'])->name('dizajneri.index');
 

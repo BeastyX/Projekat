@@ -51,16 +51,21 @@ class KlijentController extends Controller
 
     public function destroy(Klijent $klijent)
     {
-        try
+        if($klijent->poslovi != NULL && count($klijent->poslovi) > 0)
+        {
+            $poruka = "Greška! Klijent je vezan za sledeće poslove:<br>";
+            foreach ($klijent->poslovi as $posao) 
+            {
+                $poruka .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- $posao->naziv <br>";
+            }
+            
+            $poruka .= "Prvo morate obrisati sve poslove za koje je vezan Klijent a tek onda obrisati Klijenta!";
+            return back()->withErrors(['delete' => $poruka]);
+        }
+        else
         {
             $klijent->delete();
-
             return redirect(route('klijenti.index'));
         }
-        catch(Exception $e)
-        {
-            return view('greska', ['greska' => $e]);
-        }
-
     }
 }
