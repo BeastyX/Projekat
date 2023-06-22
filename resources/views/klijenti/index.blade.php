@@ -9,15 +9,14 @@
         <a href="{{route('klijenti.create')}}"><button type="button" class="btn btn-primary btn-lg">+ Novi Klijent</button></a>
         @endauth
     </div>
-
     <table class="table">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Ime</th>
-                <th>Tip</th>
-                <th>Država</th>
-                <th>Rating</th>
+                <th>@sortablelink('ime', 'Ime') <i class="bi bi-arrow-down-up text-primary" style="font-size: 11px;"></i></th>
+                <th>@sortablelink('tip', 'Tip') <i class="bi bi-arrow-down-up" style="font-size: 11px;"></i></th>
+                <th>@sortablelink('drzava', 'Država') <i class="bi bi-arrow-down-up" style="font-size: 11px;"></i></th>
+                <th>@sortablelink('upwork_rating', 'Rating') <i class="bi bi-arrow-down-up" style="font-size: 11px;"></i></th>
                 @auth
                     <th>Detaljno</th>
                     <th>Obriši</th>

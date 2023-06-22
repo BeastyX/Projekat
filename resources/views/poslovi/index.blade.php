@@ -14,11 +14,11 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Naziv</th>
-                <th>Početak</th>
-                <th>Završetak</th>
-                <th>Budžet</th>
-                <th>Status</th>
+                <th>@sortablelink('naziv', 'Naziv') <i class="bi bi-arrow-down-up text-primary" style="font-size: 11px;"></i></th>
+                <th>@sortablelink('datum_pocetka', 'Početak') <i class="bi bi-arrow-down-up" style="font-size: 11px;"></i></th>
+                <th>@sortablelink('datum_zavrsetka', 'Završetak') <i class="bi bi-arrow-down-up" style="font-size: 11px;"></i></th>
+                <th>@sortablelink('budzet', 'Budžet') <i class="bi bi-arrow-down-up" style="font-size: 11px;"></i></th>
+                <th>@sortablelink('status', 'Status') <i class="bi bi-arrow-down-up" style="font-size: 11px;"></i></th>
                 @auth
                     <th>Detaljno</th>
                     <th>Obriši</th>

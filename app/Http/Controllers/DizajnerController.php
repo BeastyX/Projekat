@@ -9,7 +9,7 @@ class DizajnerController extends Controller
 {
     public function index()
     {
-        return view('dizajneri.index', ["dizajneri" => Dizajner::latest()->paginate(5)]);
+        return view('dizajneri.index', ["dizajneri" => Dizajner::sortable()->paginate(5)]);
     }
 
     public function create()

@@ -28,7 +28,17 @@ php artisan serve
 
 php artisan make:controller UserController
 
+// Sortirajuce tabele
+composer require kyslik/column-sortable
 
+// Posle toga dodaj: 
+//      'providers' => [
+//	        Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
+//      ]
+// u config/app.php
+
+// i na kraju: 
+php artisan vendor:publish --provider="Kyslik\ColumnSortable\ColumnSortableServiceProvider" --tag="config"
 
 
 // Da bi radila paginacija u bootstrapu potrebno je dodati

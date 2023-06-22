@@ -10,7 +10,7 @@ class FrilenserController extends Controller
 {
     public function index()
     {
-        return view('frilenseri.index', ["frilenseri" => Frilenser::latest()->paginate(5)]);
+        return view('frilenseri.index', ["frilenseri" => Frilenser::sortable()->paginate(5)]);
     }
 
     public function create()

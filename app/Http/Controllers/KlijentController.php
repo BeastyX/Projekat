@@ -10,7 +10,7 @@ class KlijentController extends Controller
 {
     public function index()
     {
-        return view('klijenti.index', ["klijenti" => Klijent::latest()->paginate(5)]);
+        return view('klijenti.index', ["klijenti" => Klijent::sortable()->paginate(5)]);
     }
 
     public function create()

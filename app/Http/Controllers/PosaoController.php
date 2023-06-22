@@ -13,7 +13,7 @@ class PosaoController extends Controller
 {
     public function index()
     {
-        return view('poslovi.index', ["poslovi" => Posao::latest()->paginate(5)]);
+        return view('poslovi.index', ["poslovi" => Posao::sortable()->paginate(5)]);
     }
 
     public function create()
