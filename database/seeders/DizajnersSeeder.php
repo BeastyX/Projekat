@@ -16,32 +16,36 @@ class DizajnersSeeder extends Seeder
     {
         Dizajner::create(
             [
-                'ime' => 'Luka',
-                'prezime' => 'Lazarevic',
+                'ime' => 'Luka Lazarevic',
+                'tip' => 0,
                 'adresa' => 'Kosovska 46',
                 'grad' => 'Krusevac',
                 'drzava' => 'Srbija',
                 'opis_delatnosti' => 'Grafički dizajner'
-            ]);
+            ]
+        );
 
         Dizajner::create(
             [
-                'ime' => 'Pera',
-                'prezime' => 'Peric',
+                'ime' => 'Pera Peric',
+                'tip' => 0,
                 'adresa' => 'Beogradska 25',
                 'grad' => 'Beograd',
                 'drzava' => 'Srbija',
                 'opis_delatnosti' => 'Dizajner zvuka'
-            ]);
+            ]
+        );
 
         Dizajner::create(
             [
                 'ime' => 'Art Studio',
+                'tip' => 1,
                 'adresa' => 'Boulevard 25',
                 'grad' => 'New York',
                 'drzava' => 'USA',
                 'opis_delatnosti' => 'Grafički dizajner'
-            ]);
+            ]
+        );
 
     }
 

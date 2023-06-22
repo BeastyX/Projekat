@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('ime');
-            $table->string('prezime')->nullable(); // Ako je NULL znaci da je kompanija
+            $table->integer('tip'); // 0 - pojedinac, 1 - kompanija
             $table->string('adresa');
             $table->string('grad');
             $table->string('drzava');
