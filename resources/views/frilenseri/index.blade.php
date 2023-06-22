@@ -17,7 +17,7 @@
             <tr>
                 <th>#</th>
                 <th>Ime</th>
-                <th>Prezime</th>
+                <th>Tip</th>
                 <th>Država</th>
                 <th>Rating</th>
                 <th>Detaljno</th>
@@ -31,10 +31,10 @@
                     <td>{{$loop->index + 1 + ($frilenseri->currentPage() - 1) * $frilenseri->perPage()}}</td>
                     <td>{{$frilenser->ime}}</td>
                     <td>
-                        @if ($frilenser->prezime == NULL)
-                            <p style="color:rgb(182, 182, 182)">Kompanija</p>
+                        @if ($frilenser->tip == 0)
+                            <i class="bi bi-person-fill"></i> Pojedinac
                         @else
-                            {{$frilenser->prezime}}
+                            <i class="bi bi-buildings-fill"></i> Kompanija
                         @endif
                     </td>
                     <td>{{$frilenser->drzava}}</td>

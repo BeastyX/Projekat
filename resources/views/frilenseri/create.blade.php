@@ -11,14 +11,17 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="ime">Ime</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="ime" placeholder="Vaše ime ili ime kompanije" required>
+                <input type="text" class="form-control" name="ime" placeholder="Ime i prezime ili ime kompanije" required>
             </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="prezime">Prezime</label>
+            <label class="control-label col-sm-2" for="tip">Tip</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="prezime" placeholder="Vaše prezime (OPCIONO)">
+                <select name="tip" class="form-control">
+                    <option value="0">Pojedinac</option>
+                    <option value="1">Kompanija</option>
+                </select>
             </div>
         </div>
 

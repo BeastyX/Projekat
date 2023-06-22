@@ -23,7 +23,7 @@ class FrilenserController extends Controller
         $frilenser = new Frilenser();
 
         $frilenser->ime = $request->input('ime');
-        $frilenser->prezime = $request->input('prezime');
+        $frilenser->tip = $request->input('tip');
         $frilenser->adresa = $request->input('adresa');
         $frilenser->grad = $request->input('grad');
         $frilenser->drzava = $request->input('drzava');

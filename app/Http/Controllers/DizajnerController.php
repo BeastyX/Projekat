@@ -22,7 +22,7 @@ class DizajnerController extends Controller
         $dizajner = new Dizajner();
 
         $dizajner->ime = $request->input('ime');
-        $dizajner->prezime = $request->input('prezime');
+        $dizajner->tip = $request->input('tip');
         $dizajner->adresa = $request->input('adresa');
         $dizajner->grad = $request->input('grad');
         $dizajner->drzava = $request->input('drzava');

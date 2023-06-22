@@ -23,7 +23,7 @@ class KlijentController extends Controller
         $klijent = new Klijent();
 
         $klijent->ime = $request->input('ime');
-        $klijent->prezime = $request->input('prezime');
+        $klijent->tip = $request->input('tip');
         $klijent->adresa = $request->input('adresa');
         $klijent->grad = $request->input('grad');
         $klijent->drzava = $request->input('drzava');

@@ -17,7 +17,7 @@
             <tr>
                 <th>#</th>
                 <th>Ime</th>
-                <th>Prezime</th>
+                <th>Tip</th>
                 <th>Država</th>
                 <th>Opis delatnosti</th>
                 <th>Detaljno</th>
@@ -31,10 +31,10 @@
                     <td>{{$loop->index + 1 + ($dizajneri->currentPage() - 1) * $dizajneri->perPage()}}</td>
                     <td>{{$dizajner->ime}}</td>
                     <td>
-                        @if ($dizajner->prezime == NULL)
-                            <p style="color:rgb(182, 182, 182)">Kompanija</p>
+                        @if ($dizajner->tip == 0)
+                            <i class="bi bi-person-fill"></i> Pojedinac
                         @else
-                            {{$dizajner->prezime}}
+                            <i class="bi bi-buildings-fill"></i> Kompanija
                         @endif
                     </td>
                     <td>{{$dizajner->drzava}}</td>
