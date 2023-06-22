@@ -7,8 +7,6 @@
     <div class="text-right" style="margin-bottom: 2em;">
         @auth
         <a href="{{route('frilenseri.create')}}"><button type="button" class="btn btn-primary btn-lg">+ Novi Frilenser</button></a>
-        @else   
-        <button type="button" class="btn btn-primary btn-lg disabled">+ Novi Frilenser</button>
         @endauth
     </div>
 
@@ -20,8 +18,10 @@
                 <th>Tip</th>
                 <th>Država</th>
                 <th>Rating</th>
-                <th>Detaljno</th>
-                <th>Obriši</th>
+                @auth
+                    <th>Detaljno</th>
+                    <th>Obriši</th>
+                @endauth
             </tr>
         </thead>
 
@@ -45,23 +45,17 @@
                             {{$frilenser->upwork_rating}}
                         @endif
                     </td>
-                    <td>
-                        @auth
+                    @auth
+                        <td>
                             <a href="{{route('frilenseri.edit', ['frilenser' => $frilenser])}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a>
-                            @else
-                            <button type="button" class="btn btn-primary btn-sm disabled">Detaljnije</button>
-                        @endauth
-                    </td>
-                    <td>
-                        <form action="{{route('frilenseri.destroy', ['frilenser' => $frilenser])}}" method="post">
-                            @csrf
-                            @auth
-                                <button class="btn btn-danger btn-sm">Obriši frilensera</button>
-                                @else
-                                <button type="button" class="btn btn-danger btn-sm disabled">Obriši frilensera</button>
-                            @endauth
-                        </form>
-                    </td>
+                        </td>
+                        <td>
+                            <form action="{{route('frilenseri.destroy', ['frilenser' => $frilenser])}}" method="post">
+                                @csrf
+                                    <button class="btn btn-danger btn-sm">Obriši frilensera</button>
+                            </form>
+                        </td>
+                    @endauth
                 </tr>
             @endforeach
         </tbody>

@@ -7,8 +7,6 @@
     <div class="text-right" style="margin-bottom: 2em;">
         @auth
         <a href="{{route('dizajneri.create')}}"><button type="button" class="btn btn-primary btn-lg">+ Novi Dizajner</button></a>
-        @else   
-        <button type="button" class="btn btn-primary btn-lg disabled">+ Novi Dizajner</button>
         @endauth
     </div>
 
@@ -20,8 +18,10 @@
                 <th>Tip</th>
                 <th>Država</th>
                 <th>Opis delatnosti</th>
-                <th>Detaljno</th>
-                <th>Obriši</th>
+                @auth
+                    <th>Detaljno</th>
+                    <th>Obriši</th>
+                @endauth
             </tr>
         </thead>
 
@@ -39,23 +39,17 @@
                     </td>
                     <td>{{$dizajner->drzava}}</td>
                     <td>{{$dizajner->opis_delatnosti}}</td>
-                    <td>
-                        @auth
+                    @auth
+                        <td>
                             <a href="{{route('dizajneri.edit', ['dizajner' => $dizajner])}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a>
-                            @else
-                            <button type="button" class="btn btn-primary btn-sm disabled">Detaljnije</button>
-                        @endauth
-                    </td>
-                    <td>
-                        <form action="{{route('dizajneri.destroy', ['dizajner' => $dizajner])}}" method="post">
-                            @csrf
-                            @auth
+                        </td>
+                        <td>
+                            <form action="{{route('dizajneri.destroy', ['dizajner' => $dizajner])}}" method="post">
+                                @csrf
                                 <button class="btn btn-danger btn-sm">Obriši dizajnera</button>
-                                @else
-                                <button type="button" class="btn btn-danger btn-sm disabled">Obriši dizajnera</button>
-                            @endauth
-                        </form>
-                    </td>
+                            </form>
+                        </td>
+                    @endauth
                 </tr>
             @endforeach
         </tbody>

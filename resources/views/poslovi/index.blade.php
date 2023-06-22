@@ -7,8 +7,6 @@
     <div class="text-right" style="margin-bottom: 2em;">
         @auth
         <a href="{{route('poslovi.create')}}"><button type="button" class="btn btn-primary btn-lg">+ Novi Posao</button></a>
-        @else   
-        <button type="button" class="btn btn-primary btn-lg disabled">+ Novi Posao</button>
         @endauth
     </div>
 
@@ -21,8 +19,10 @@
                 <th>Završetak</th>
                 <th>Budžet</th>
                 <th>Status</th>
-                <th>Detaljno</th>
-                <th>Obriši</th>
+                @auth
+                    <th>Detaljno</th>
+                    <th>Obriši</th>
+                @endauth
             </tr>
         </thead>
 
@@ -48,23 +48,18 @@
                                 
                         @endswitch
                     </td>
-                    <td>
-                        @auth
+                    @auth
+                        <td>
                             <a href="{{route('poslovi.edit', ['posao' => $posao])}}"><button type="button" class="btn btn-primary btn-sm">Detaljnije</button></a>
-                            @else
-                            <button type="button" class="btn btn-primary btn-sm disabled">Detaljnije</button>
-                        @endauth
-                    </td>
-                    <td>
-                        <form action="{{route('poslovi.destroy', ['posao' => $posao])}}" method="post">
-                            @csrf
-                            @auth
+                        </td>
+                        
+                        <td>
+                            <form action="{{route('poslovi.destroy', ['posao' => $posao])}}" method="post">
+                                @csrf
                                 <button class="btn btn-danger btn-sm">Obriši posao</button>
-                            @else
-                                <button type="button" class="btn btn-danger btn-sm disabled">Obriši posao</button>
-                            @endauth
-                        </form>
-                    </td>
+                            </form>
+                        </td>
+                    @endauth
                 </tr>
             @endforeach
         </tbody>
